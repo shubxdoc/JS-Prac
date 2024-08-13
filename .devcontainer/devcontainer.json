@@ -3,10 +3,10 @@
 {
 	"name": "Node.js",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm"
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	"features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
@@ -23,11 +23,10 @@
 			],
 			// Settings to configure VS Code
 			"settings": {
-				"editor.formatOnSave": true, // Format on save
-				"editor.defaultFormatter": "esbenp.prettier-vscode" // Set Prettier as default formatter
+				"editor.formatOnSave": true // Format on save
 			}
 		}
-	},
+	}
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
