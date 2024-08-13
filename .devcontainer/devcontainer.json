@@ -15,7 +15,19 @@
 	// "postCreateCommand": "yarn install",
 
 	// Configure tool-specific properties.
-	// "customizations": {},
+	"customizations": {
+		"vscode": {
+			// Extensions to install
+			"extensions": [
+				"esbenp.prettier-vscode" // Prettier extension
+			],
+			// Settings to configure VS Code
+			"settings": {
+				"editor.formatOnSave": true, // Format on save
+				"editor.defaultFormatter": "esbenp.prettier-vscode" // Set Prettier as default formatter
+			}
+		}
+	},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
