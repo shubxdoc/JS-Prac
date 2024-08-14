@@ -23,7 +23,8 @@
 			],
 			// Settings to configure VS Code
 			"settings": {
-				"editor.formatOnSave": true // Format on save
+				"editor.formatOnSave": true, // Format on save
+				"editor.defaultFormatter": "esbenp.prettier-vscode" // Set Prettier as default formatter
 			}
 		}
 	}
