@@ -1,0 +1,23 @@
+body {
+  background-color: #212121;
+  color: white;
+  font-family: sans-serif;
+}
+
+#results {
+  font-size: larger;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+input {
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  display: block;
+  margin-top: 20px;
+  padding: 5px;
+}

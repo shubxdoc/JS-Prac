@@ -1,0 +1,22 @@
+body {
+  background-color: #212121;
+  color: white;
+  font-family: monospace;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  text-align: center;
+}
+
+.clock {
+  margin: 0 auto 0 auto;
+  width: 20%;
+  padding: 5px;
+  background-color: orange;
+  border-radius: 10px;
+  color: #212121;
+}

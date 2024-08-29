@@ -1,0 +1,31 @@
+body {
+  background-color: beige;
+  color: black;
+  font-family: sans-serif;
+}
+
+.box {
+  height: 60px;
+  width: 60px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+#grey {
+  background: grey;
+}
+
+#white {
+  background: white;
+}
+#blue {
+  background: blue;
+}
+#yellow {
+  background: yellow;
+}
+
+#reset {
+  border: dotted;
+  cursor: crosshair;
+}
