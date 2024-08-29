@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      body {
+        background-color: #212122;
+        color: white;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+
+    <script>
+      function newItem(text) {
+        const list = document.createElement("li")
+        list.innerText = text
+        document.querySelector(".language").appendChild(list)
+      }
+      newItem("C#")
+
+      function newItemOptimized(text) {
+        const list = document.createElement("li")
+        list.appendChild(document.createTextNode(text))
+        document.querySelector(".language").appendChild(list)
+      }
+      newItemOptimized("apple")
+
+      //Edit
+      const secondLang = document.querySelector("li:nth-child(2)")
+      const newLi = document.createElement("li")
+      newLi.textContent = "Mojo"
+      secondLang.replaceWith(newLi)
+
+      //edit
+      const firstLang = document.querySelector("li:first-child")
+      firstLang.outerHTML = "<li>Typescript</li>"
+
+      //remove
+      const lastLang = document.querySelector("li:last-child")
+      lastLang.remove()
+    </script>
+  </body>
+</html>
