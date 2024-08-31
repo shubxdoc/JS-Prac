@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API's</title>
+    <style>
+      .card {
+        background-color: aliceblue;
+        margin: 8px;
+        padding: 6px;
+        color: black;
+        border-radius: 10px;
+        width: 29rem;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body
+    style="background-color: #212121; color: white; font-family: sans-serif"
+  >
+    <div class="documentation">
+      <p>0 UNSENT Client has been created. open() not called yet.</p>
+      <p>1 OPENED open() has been called.</p>
+      <p>
+        2 HEADERS_RECEIVED send() has been called, and headers and status are
+        available.
+      </p>
+      <p>3 LOADING Downloading; responseText holds partial data.</p>
+      <p>4 DONE The operation is complete.</p>
+    </div>
+    <div class="card"></div>
+  </body>
+  <script>
+    const card = document.querySelector(".card")
+    const pfp = document.createElement("a")
+    const follow_cnt = document.createElement("h2")
+    const reuestUrl = "https://api.github.com/users/hiteshchoudhary"
+    const xhr = new XMLHttpRequest()
+    xhr.open("GET", reuestUrl)
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState)
+      if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText)
+        console.log(data)
+        pfp.href = data.url
+        pfp.innerHTML = `<img src = ${data.avatar_url} alt="Avatar"/>`
+        follow_cnt.innerText = `Followers: ${data.followers}`
+      }
+    }
+    xhr.send() //call hota hai yaha
+    card.appendChild(pfp)
+    card.appendChild(follow_cnt)
+  </script>
+</html>
