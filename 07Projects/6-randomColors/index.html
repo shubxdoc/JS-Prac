@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Changer</title>
+    <style>
+      button {
+        background-color: cornsilk;
+        padding: 4px 8px;
+        margin-right: 10px;
+        border: none;
+        cursor: pointer;
+        font-size: large;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body
+    style="background-color: #212121; color: white; font-family: sans-serif"
+  >
+    <h1>"Start" should change the background-color every second</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+  </body>
+  <script>
+    // 1. Approch
+    // function randomColor() {
+    //   let color = "#" + Math.floor(Math.random() * 16777215).toString(16)
+    //   document.body.style.backgroundColor = color
+    // }
+
+    // let interval
+
+    // function bgColor(run) {
+    //   if (run && !interval) {
+    //     interval = setInterval(randomColor, 1000)
+    //   } else if (!run && interval) {
+    //     clearInterval(interval)
+    //     interval = null
+    //   }
+    // }
+
+    // document
+    //   .querySelector("#start")
+    //   .addEventListener("click", () => bgColor(true))
+    // document
+    //   .querySelector("#stop")
+    //   .addEventListener("click", () => bgColor(false))
+
+    // 2. Approch
+
+    function randomColor() {
+      const hex = "0123456789ABCDEF"
+      let color = "#"
+      for (let i = 0; i < 6; i++) {
+        color += hex[Math.floor(Math.random() * 16)]
+      }
+      return color
+    }
+
+    let intervalId
+    function startChangingColor() {
+      if (!intervalId) {
+        intervalId = setInterval(changeBgColor, 1000)
+      }
+      function changeBgColor() {
+        document.body.style.backgroundColor = randomColor()
+      }
+    }
+    function stopChangingColor() {
+      clearInterval(intervalId)
+      intervalId = null
+    }
+
+    document
+      .querySelector("#start")
+      .addEventListener("click", startChangingColor)
+    document.querySelector("#stop").addEventListener("click", stopChangingColor)
+  </script>
+</html>
