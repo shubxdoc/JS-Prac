@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+  <body style="background-color: #212122; color: aliceblue"></body>
+  <script>
+    // function init() {
+    //   let name = "Mozilla"
+    //   function displayName() {
+    //     console.log(name)
+    //   }
+    //   displayName()
+    // }
+    // init()
+
+    //function ke ander function ko leixcal scope kehte hai cause parent ke values child accesss kar sakta hai
+
+    function outer() {
+      let username = "shub"
+      function inner() {
+        console.log("inner", username)
+      }
+      inner()
+    }
+    outer()
+    console.log("outer", username)
+  </script>
+</html>

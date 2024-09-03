@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #1f1f1f; color: white">
+    <!-- Practical user-case  -->
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+
+    <script>
+      function clickHandle(color) {
+        // document.body.style.backgroundColor = `${color}`
+
+        return function () {
+          document.body.style.backgroundColor = `${color}`
+        }
+      }
+
+      document.querySelector("#orange").onclick = clickHandle("orange")
+
+      document.querySelector("#green").onclick = clickHandle("green")
+    </script>
+  </body>
+  <!-- Explantion of closure  -->
+  <!-- <script>
+    function makeFunc() {
+      const name = "Mozilla"
+      function displayName() {
+        console.log(name)
+      }
+      return displayName // when you write this not only displayName() is returned but also the name variable cause of  the lexical scoping
+    }
+
+    const myFunc = makeFunc()
+    myFunc()
+
+    // So , in line 19  jab hum new function call karte hai jisme makeFunc() ka value jaega jo ki return karega not only the inner displayName() but also the name variable and properties of parent function cause of lexical scope
+  </script> -->
+</html>
