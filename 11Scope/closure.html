@@ -15,13 +15,13 @@
         // document.body.style.backgroundColor = `${color}`
 
         return function () {
-          document.body.style.backgroundColor = `${color}`
-        }
+          document.body.style.backgroundColor = `${color}`;
+        };
       }
 
-      document.querySelector("#orange").onclick = clickHandle("orange")
+      document.querySelector("#orange").onclick = clickHandle("orange");
 
-      document.querySelector("#green").onclick = clickHandle("green")
+      document.querySelector("#green").onclick = clickHandle("green");
     </script>
   </body>
   <!-- Explantion of closure  -->
@@ -31,12 +31,20 @@
       function displayName() {
         console.log(name)
       }
-      return displayName // when you write this not only displayName() is returned but also the name variable cause of  the lexical scoping
+      return displayName // 1. Now here instead of returning the function we are returning only the reference 
     }
 
-    const myFunc = makeFunc()
+    const myFunc = makeFunc() 
     myFunc()
 
-    // So , in line 19  jab hum new function call karte hai jisme makeFunc() ka value jaega jo ki return karega not only the inner displayName() but also the name variable and properties of parent function cause of lexical scope
+    // 2. So when we call the makeFunc() (in line 37) it return the displayName function here and one would think that the  makeFunc() would be gone and then we cannot get the value of name from it now to displayName()
+
+    // 3. But that would be wrong and the concepts of "Closure" comes into play which says although we have removed the scope of the function but now memory reference comes into play so when we do,  
+    
+     const myFunc = makeFunc() 
+
+     not only displayName is returned if there is a outer function that exists the scope of the outer function would also be returned.
+
+    
   </script> -->
 </html>
